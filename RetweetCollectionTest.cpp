@@ -1,9 +1,7 @@
 #include "gmock/gmock.h"
 #include "RetweetCollection.h"
-// START:test
 #include "Tweet.h"
 
-// END:test
 using namespace ::testing;
 
 class ARetweetCollection: public Test {
@@ -19,10 +17,16 @@ TEST_F(ARetweetCollection, HasSizeZeroWhenCreated) {
    ASSERT_THAT(collection.size(), Eq(0));
 }
 
-// START:test
 TEST_F(ARetweetCollection, IsNoLongerEmptyAfterTweetAdded) {
    collection.add(Tweet());
    
    ASSERT_THAT(collection.isEmpty(), Eq(false));
+}
+
+// START:test
+TEST_F(ARetweetCollection, HasSizeOfOneAfterTweetAdded) {
+   collection.add(Tweet());
+
+   ASSERT_THAT(collection.size(), Eq(1));
 }
 // END:test
