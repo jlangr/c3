@@ -2,8 +2,8 @@
 #include "RetweetCollection.h"
 // START:test
 #include "Tweet.h"
-// END:test
 
+// END:test
 using namespace ::testing;
 
 class ARetweetCollection: public Test {
