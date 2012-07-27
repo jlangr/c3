@@ -5,7 +5,10 @@ include_directories(/home/jlangr/gmock-1.6.0/include /home/jlangr/gmock-1.6.0/gt
 link_directories(/home/jlangr/gmock-1.6.0/mybuild /home/jlangr/gmock-1.6.0/gtest/mybuild)
 add_definitions(-std=c++0x)
 
-set(sources main.cpp RetweetCollectionTest.cpp)
+set(sources 
+   main.cpp 
+   RetweetCollectionTest.cpp 
+   RetweetCollection.cpp)
 add_executable(test ${sources})
 target_link_libraries(test pthread)
 target_link_libraries(test gmock)
