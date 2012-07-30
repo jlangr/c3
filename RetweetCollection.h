@@ -18,11 +18,13 @@ public:
       empty_ = false;
    }
 
-// START:hasSizeOne
    unsigned int size() const {
-// START_HIGHLIGHT
       return isEmpty() ? 0 : 1;
-// END_HIGHLIGHT
+   }
+
+// START:hasSizeOne
+   void remove(const Tweet& tweet) {
+      empty_ = true;
    }
 // END:hasSizeOne
 

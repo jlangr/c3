@@ -28,3 +28,13 @@ TEST_F(ARetweetCollection, HasSizeOfOneAfterTweetAdded) {
 
    ASSERT_THAT(collection.size(), Eq(1));
 }
+
+// START:decreasesSize
+TEST_F(ARetweetCollection, DecreasesSizeAfterRemovingTweet) {
+   collection.add(Tweet());
+   
+   collection.remove(Tweet());
+
+   ASSERT_THAT(collection.size(), Eq(0));
+}
+// END:decreasesSize
