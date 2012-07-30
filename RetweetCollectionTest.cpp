@@ -36,5 +36,6 @@ TEST_F(ARetweetCollection, DecreasesSizeAfterRemovingTweet) {
    collection.remove(Tweet());
 
    ASSERT_THAT(collection.size(), Eq(0));
+   ASSERT_THAT(collection.isEmpty(), Eq(true)); // DON'T DO THIS
 }
 // END:decreasesSize
