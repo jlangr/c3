@@ -18,9 +18,13 @@ public:
       empty_ = false;
    }
 
+// START:hasSizeOne
    unsigned int size() const {
-      return 0;
+// START_HIGHLIGHT
+      return isEmpty() ? 0 : 1;
+// END_HIGHLIGHT
    }
+// END:hasSizeOne
 
 private:
    bool empty_;
