@@ -9,6 +9,7 @@ set(sources
    main.cpp 
    RetweetCollectionTest.cpp 
    RetweetCollection.cpp
+   TweetTest.cpp
    Tweet.cpp)
 add_executable(test ${sources})
 target_link_libraries(test pthread)
