@@ -1,37 +1,29 @@
 #ifndef RetweetCollection_h
 #define RetweetCollection_h
 
-// START:add
-// START_HIGHLIGHT
 #include "Tweet.h"
-// END_HIGHLIGHT
 
+// START:alternate
 class RetweetCollection {
 public:
-// START_HIGHLIGHT
    RetweetCollection() 
-      : size_(0) {
+      : empty_(true) {
    }
-// END_HIGHLIGHT
 
    bool isEmpty() const {
-      return 0 == size();
+      return empty_;
+   }
+
+   void add(const Tweet& tweet) {
+      empty_ = false;
    }
 
    unsigned int size() const {
-      return size_;
+      return 0;
    }
 
-// START_HIGHLIGHT
-   void add(const Tweet& tweet) {
-      size_ = 1;
-   }
-// END_HIGHLIGHT
-
-// START_HIGHLIGHT
 private:
-   unsigned int size_;
-// END_HIGHLIGHT
+   bool empty_;
 };
-// END:add
+// END:alternate
 #endif

@@ -13,20 +13,18 @@ TEST_F(ARetweetCollection, IsEmptyWhenCreated) {
    ASSERT_THAT(collection.isEmpty(), Eq(true));
 }
 
-TEST_F(ARetweetCollection, HasSizeZeroWhenCreated) {
-   ASSERT_THAT(collection.size(), Eq(0));
-}
-
 TEST_F(ARetweetCollection, IsNoLongerEmptyAfterTweetAdded) {
    collection.add(Tweet());
    
    ASSERT_THAT(collection.isEmpty(), Eq(false));
 }
 
-// START:test
-TEST_F(ARetweetCollection, HasSizeOfOneAfterTweetAdded) {
+TEST_F(ARetweetCollection, HasSizeZeroWhenCreated) {
+   ASSERT_THAT(collection.size(), Eq(0));
+}
+
+TEST_F(ARetweetCollection, DISABLED_HasSizeOfOneAfterTweetAdded) {
    collection.add(Tweet());
 
    ASSERT_THAT(collection.size(), Eq(1));
 }
-// END:test
