@@ -29,13 +29,21 @@ TEST_F(ARetweetCollection, HasSizeOfOneAfterTweetAdded) {
    ASSERT_THAT(collection.size(), Eq(1));
 }
 
-// START:decreasesSize
+// START:twoTests
 TEST_F(ARetweetCollection, DecreasesSizeAfterRemovingTweet) {
    collection.add(Tweet());
    
    collection.remove(Tweet());
 
    ASSERT_THAT(collection.size(), Eq(0));
-   ASSERT_THAT(collection.isEmpty(), Eq(true)); // DON'T DO THIS
 }
-// END:decreasesSize
+
+// AVOID doing this
+TEST_F(ARetweetCollection, IsEmptyAfterRemovingTweet) {
+   collection.add(Tweet());
+   
+   collection.remove(Tweet());
+
+   ASSERT_THAT(collection.isEmpty(), Eq(true)); 
+}
+// END:twoTests
