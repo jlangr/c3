@@ -40,14 +40,25 @@ TEST_F(ARetweetCollection, HasSizeOfOneAfterTweetAdded) {
    ASSERT_THAT(collection.size(), Eq(1));
 }
 
-// START:helper
 TEST_F(ARetweetCollection, DecreasesSizeAfterRemovingTweet) {
    collection.add(Tweet());
    
    collection.remove(Tweet());
 
-// START_HIGHLIGHT
    ASSERT_SIZE(0);
-// END_HIGHLIGHT
 }
-// END:helper
+
+// START:invariants
+TEST_F(ARetweetCollection, IsEmptyWhenItsSizeIsZero) {
+   ASSERT_THAT(collection.size(), Eq(0));
+
+   ASSERT_THAT(collection.isEmpty(), Eq(true));
+}
+
+TEST_F(ARetweetCollection, IsNotEmptyWhenItsSizeIsNonZero) {
+   collection.add(Tweet());
+   ASSERT_THAT(collection.size(), Gt(0));
+
+   ASSERT_THAT(collection.isEmpty(), Eq(false));
+}
+// END:invariants
