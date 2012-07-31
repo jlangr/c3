@@ -3,8 +3,20 @@
 
 #include <string>
 #include <exception>
+#include <iostream>
 
 class InvalidUserException: public std::exception {
+public:
+   InvalidUserException(const std::string& user) 
+      : user_(user) {}
+   virtual ~InvalidUserException() throw() {}
+
+   const char* what() const throw() {
+      return user_.c_str();
+   }
+
+private:
+   std::string user_;
 };
 
 class Tweet {
@@ -15,7 +27,7 @@ public:
          const std::string& user=Tweet::NULL_USER) 
       : message_(message)
       , user_(user) {
-      if (!isValid(user_)) throw InvalidUserException();
+      if (!isValid(user_)) throw InvalidUserException(user_);
    }
 
    bool isValid(const std::string& user) const {
