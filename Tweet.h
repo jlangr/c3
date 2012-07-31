@@ -5,8 +5,10 @@
 
 class Tweet {
 public:
+   static const std::string NULL_USER;
 // START:throwAny
-   Tweet(const std::string& message="", const std::string& user="@null") 
+   Tweet(const std::string& message="", 
+         const std::string& user=Tweet::NULL_USER) 
       : message_(message)
       , user_(user) {
       if (!isValid(user_)) throw 1;
@@ -16,6 +18,10 @@ public:
       return '@' == user[0];
    }
 // END:throwAny
+
+   std::string user() const {
+      return user_;
+   }
 
    bool operator==(const Tweet& rhs) const {
       return message_ == rhs.message_ &&
@@ -36,4 +42,5 @@ private:
    const std::string message_;
    const std::string user_;
 };
+
 #endif

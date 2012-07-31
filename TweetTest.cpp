@@ -5,6 +5,12 @@
 using namespace ::testing;
 using namespace std;
 
+TEST(ATweet, DefaultsUserToNullWhenNotProvided) {
+   Tweet tweet("msg");
+
+   ASSERT_THAT(tweet.user(), Eq("@null"));
+}
+
 TEST(ATweet, IsEqualToAnotherWhenMessageAndUserAreEqual) {
    Tweet a("msg", "@user");
    Tweet b("msg", "@user");
