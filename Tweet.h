@@ -2,6 +2,10 @@
 #define Tweet_h
 
 #include <string>
+#include <exception>
+
+class InvalidUserException: public std::exception {
+};
 
 class Tweet {
 public:
@@ -11,7 +15,7 @@ public:
          const std::string& user=Tweet::NULL_USER) 
       : message_(message)
       , user_(user) {
-      if (!isValid(user_)) throw 1;
+      if (!isValid(user_)) throw InvalidUserException();
    }
 
    bool isValid(const std::string& user) const {

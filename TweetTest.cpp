@@ -60,3 +60,21 @@ TEST(ATweet, RequiresUserToStartWithAtSign) {
    ASSERT_ANY_THROW(Tweet tweet("msg", invalidUser));
 }
 // END:throwAny
+
+// START:throwWithType
+TEST(ATweet, RequiresUserToStartWithAnAtSign) {
+   string invalidUser("notStartingWith@");
+
+   ASSERT_THROW(Tweet tweet("msg", invalidUser), InvalidUserException);
+}
+// END:throwWithType
+
+// START:throwCatch
+TEST(ATweet, RequiresUserNameToStartWithAnAtSign) {
+   string invalidUser("notStartingWith@");
+   try {
+      Tweet tweet("msg", invalidUser);
+   } 
+   catch (InvalidUserException expected) {}
+}
+// END:throwCatch
