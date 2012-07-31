@@ -1,7 +1,9 @@
 #include "gmock/gmock.h"
 #include "Tweet.h"
+#include <string>
 
 using namespace ::testing;
+using namespace std;
 
 TEST(ATweet, IsEqualToAnotherWhenMessageAndUserAreEqual) {
    Tweet a("msg", "@user");
@@ -44,3 +46,11 @@ TEST(ATweet, CanBeCopyConstructed) {
 
    ASSERT_THAT(a, Eq(b));
 }
+
+// START:throwAny
+TEST(ATweet, RequiresUserToStartWithAtSign) {
+   string invalidUser("notStartingWith@");
+
+   ASSERT_ANY_THROW(Tweet tweet("msg", invalidUser));
+}
+// END:throwAny
