@@ -75,6 +75,6 @@ TEST(ATweet, RequiresUserNameToStartWithAnAtSign) {
    try {
       Tweet tweet("msg", invalidUser);
    } 
-   catch (InvalidUserException expected) {}
+   catch (const InvalidUserException& expected) {}
 }
 // END:throwCatch
