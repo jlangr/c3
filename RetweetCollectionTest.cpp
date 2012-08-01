@@ -61,6 +61,7 @@ TEST_F(ARetweetCollection, IsNotEmptyWhenItsSizeIsNonZero) {
    ASSERT_THAT(collection.isEmpty(), Eq(false));
 }
 
+// START:IncrementsSizeWhenTweetAdded
 TEST_F(ARetweetCollection, IncrementsSizeWhenTweetAdded) {
    Tweet first("msg1", "@user");
    collection.add(first);
@@ -70,6 +71,7 @@ TEST_F(ARetweetCollection, IncrementsSizeWhenTweetAdded) {
 
    ASSERT_THAT(collection.size(), Eq(2));
 }
+// END:IncrementsSizeWhenTweetAdded
 
 // START:IgnoreDuplicates
 TEST_F(ARetweetCollection, IgnoresDuplicateTweetAdded) {
