@@ -56,6 +56,7 @@ TEST_F(ARetweetCollectionWithOneTweet, HasSizeOfOne) {
 }
 // END:OneTweetTests
 
+// START:IgnoresDuplicateTweetAdded
 TEST_F(ARetweetCollection, IgnoresDuplicateTweetAdded) {
    Tweet tweet("msg", "@user");
    Tweet duplicate(tweet);
@@ -64,4 +65,5 @@ TEST_F(ARetweetCollection, IgnoresDuplicateTweetAdded) {
 
    ASSERT_THAT(collection.size(), Eq(1));
 }
+// END:IgnoresDuplicateTweetAdded
 
