@@ -41,7 +41,9 @@ public:
    RetweetCollection collection;
 
    void SetUp() {
-      collection.add(Tweet());
+// START_HIGHLIGHT
+      collection.add(Tweet("msg", "@user"));
+// END_HIGHLIGHT
    }
 };
 // END:OneTweetFixture
