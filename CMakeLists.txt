@@ -7,6 +7,7 @@ add_definitions(-std=c++0x)
 
 set(sources 
    main.cpp 
+   ParameterizedTest.cpp
    RetweetCollectionTest.cpp 
    RetweetCollection.cpp
    TweetTest.cpp
