@@ -18,7 +18,7 @@ class AnAdder: public TestWithParam<SumCase> {
 // START:Adder
 class Adder {
 public:
-   int sum(int a, int b) const {
+   static int sum(int a, int b) {
       return a + b;
    }
 };
@@ -26,16 +26,14 @@ public:
 
 // START:RegularAdderTest
 TEST(AnAdder, GeneratesASumFromTwoNumbers) {
-   Adder adder;
-   ASSERT_THAT(adder.sum(1, 1), Eq(2));
+   ASSERT_THAT(Adder::sum(1, 1), Eq(2));
 }
 // END:RegularAdderTest
 
 // START:ParameterizedAdderTest
 TEST_P(AnAdder, GeneratesLotsOfSumsFromTwoNumbers) {
    SumCase input = GetParam();
-   Adder adder;
-   ASSERT_THAT(adder.sum(input.a, input.b), Eq(input.expected));
+   ASSERT_THAT(Adder::sum(input.a, input.b), Eq(input.expected));
 }
 
 SumCase sums[] = { 
