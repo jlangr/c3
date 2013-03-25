@@ -2,21 +2,13 @@
 #define Tweet_h
 
 #include <string>
-#include <exception>
+#include <stdexcept>
 #include <iostream>
 
-class InvalidUserException: public std::exception {
+class InvalidUserException: public std::invalid_argument {
 public:
    InvalidUserException(const std::string& user) 
-      : user_(user) {}
-   virtual ~InvalidUserException() throw() {}
-
-   const char* what() const throw() {
-      return user_.c_str();
-   }
-
-private:
-   std::string user_;
+      : std::invalid_argument(user) {}
 };
 
 class Tweet {
