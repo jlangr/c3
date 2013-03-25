@@ -2,9 +2,11 @@
 #define Tweet_h
 
 #include <string>
-#include <exception>
+#include <stdexcept>
 
-class InvalidUserException: public std::exception {
+class InvalidUserException: public std::invalid_argument {
+public:
+   InvalidUserException(): invalid_argument("") {}
 };
 
 class Tweet {
