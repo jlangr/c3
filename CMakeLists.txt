@@ -1,8 +1,8 @@
-project(chapter3)
+project(foundations)
 cmake_minimum_required(VERSION 2.6)
 
-include_directories(/home/jlangr/gmock-1.6.0/include /home/jlangr/gmock-1.6.0/gtest/include)
-link_directories(/home/jlangr/gmock-1.6.0/mybuild /home/jlangr/gmock-1.6.0/gtest/mybuild)
+include_directories(~/gmock-1.6.0/include ~/gmock-1.6.0/gtest/include)
+link_directories(~/gmock-1.6.0/mybuild ~/gmock-1.6.0/gtest/mybuild)
 add_definitions(-std=c++0x)
 
 set(sources 
@@ -14,8 +14,4 @@ target_link_libraries(test pthread)
 target_link_libraries(test gmock)
 target_link_libraries(test gtest)
 target_link_libraries(test rt)
-
-# add_custom_command(TARGET run DEPENDS ./test
-#    COMMAND ./test
-# )
 
