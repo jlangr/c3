@@ -1,8 +1,8 @@
 project(foundations)
 cmake_minimum_required(VERSION 2.6)
 
-include_directories(~/gmock-1.6.0/include ~/gmock-1.6.0/gtest/include)
-link_directories(~/gmock-1.6.0/mybuild ~/gmock-1.6.0/gtest/mybuild)
+include_directories($ENV{GMOCK_HOME}/include $ENV{GMOCK_HOME}/gtest/include)
+link_directories($ENV{GMOCK_HOME}/mybuild $ENV{GMOCK_HOME}/gtest/mybuild)
 add_definitions(-std=c++0x)
 
 set(sources main.cpp RetweetCollectionTest.cpp)
