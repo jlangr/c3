@@ -12,7 +12,9 @@ public:
 // START:helper
 // START_HIGHLIGHT
 MATCHER_P(HasSize, expected, "") { 
-   return arg.size() == expected && arg.isEmpty() == ( expected == 0 ); 
+   return 
+      arg.size() == expected && 
+      arg.isEmpty() == (0 == expected); 
 }
 // END_HIGHLIGHT
 
