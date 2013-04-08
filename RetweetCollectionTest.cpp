@@ -10,12 +10,13 @@ using namespace std;
 class ARetweetCollection: public Test {
 public:
    RetweetCollection collection;
-
-   void ASSERT_SIZE(unsigned int expected) {
-      ASSERT_THAT(collection.size(), Eq(expected));
-      ASSERT_THAT(collection.isEmpty(), Eq(0 == expected));
-   }
 };
+
+MATCHER_P(HasSize, expected, "") { 
+   return 
+      arg.size() == expected && 
+      arg.isEmpty() == (0 == expected); 
+}
 
 TEST_F(ARetweetCollection, IsEmptyWhenCreated) {
    ASSERT_THAT(collection.isEmpty(), Eq(true));
