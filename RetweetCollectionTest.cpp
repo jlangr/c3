@@ -4,19 +4,17 @@
 
 using namespace ::testing;
 
-// START:helper
 class ARetweetCollection: public Test {
 public:
    RetweetCollection collection;
-
-// START_HIGHLIGHT
-// TODO: google test might have a better way to do this...
-   void ASSERT_SIZE(unsigned int expected) {
-      ASSERT_THAT(collection.size(), Eq(expected));
-      ASSERT_THAT(collection.isEmpty(), Eq(0 == expected));
-   }
-// END_HIGHLIGHT
 };
+
+// START:helper
+// START_HIGHLIGHT
+MATCHER_P(HasSize, expected, "") { 
+   return arg.size() == expected && arg.isEmpty() == ( expected == 0 ); 
+}
+// END_HIGHLIGHT
 
 // END:helper
 
@@ -47,7 +45,7 @@ TEST_F(ARetweetCollection, DecreasesSizeAfterRemovingTweet) {
    collection.remove(Tweet());
 
 // START_HIGHLIGHT
-   ASSERT_SIZE(0);
+   ASSERT_THAT(collection, HasSize(0));
 // END_HIGHLIGHT
 }
 // END:helper
