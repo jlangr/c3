@@ -26,7 +26,7 @@ public:
    }
 
 private:
-   const std::string message_;
-   const std::string user_;
+   std::string message_;
+   std::string user_;
 };
 #endif
