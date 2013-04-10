@@ -74,6 +74,7 @@ TEST(ATweet, RequiresUserNameToStartWithAnAtSign) {
    string invalidUser("notStartingWith@");
    try {
       Tweet tweet("msg", invalidUser);
+      FAIL();
    } 
    catch (const InvalidUserException& expected) {}
 }
@@ -84,6 +85,7 @@ TEST(ATweet, RequiresUserNameToStartWithAtSign) {
    string invalidUser("notStartingWith@");
    try {
       Tweet tweet("msg", invalidUser);
+      FAIL();
    } 
    catch (const InvalidUserException& expected) {
       ASSERT_STREQ("notStartingWith@", expected.what());
