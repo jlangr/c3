@@ -49,6 +49,7 @@ public:
 
    void TearDown() {
       delete tweet;
+      tweet = nullptr;
    }
 };
 // END:OneTweetFixture
