@@ -48,13 +48,13 @@ TEST_F(ARetweetCollection, DecreasesSizeAfterRemovingTweet) {
 TEST_F(ARetweetCollection, IsEmptyWhenItsSizeIsZero) {
    ASSERT_THAT(collection.size(), Eq(0));
 
-   ASSERT_THAT(collection.isEmpty(), Eq(true));
+   ASSERT_TRUE(collection.isEmpty());
 }
 
 TEST_F(ARetweetCollection, IsNotEmptyWhenItsSizeIsNonZero) {
    collection.add(Tweet());
    ASSERT_THAT(collection.size(), Gt(0));
 
-   ASSERT_THAT(collection.isEmpty(), Eq(false));
+   ASSERT_FALSE(collection.isEmpty());
 }
 // END:invariants
