@@ -17,7 +17,7 @@ MATCHER_P(HasSize, expected, "") {
 }
 
 TEST_F(ARetweetCollection, IsEmptyWhenCreated) {
-   ASSERT_THAT(collection.isEmpty(), Eq(true));
+   ASSERT_TRUE(collection.isEmpty());
 }
 
 TEST_F(ARetweetCollection, IsNoLongerEmptyAfterTweetAdded) {
