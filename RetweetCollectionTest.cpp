@@ -23,6 +23,6 @@ TEST_F(ARetweetCollection, HasSizeZeroWhenCreated) {
 TEST_F(ARetweetCollection, IsNoLongerEmptyAfterTweetAdded) {
    collection.add(Tweet());
    
-   ASSERT_THAT(collection.isEmpty(), Eq(false));
+   ASSERT_FALSE(collection.isEmpty());
 }
 // END:test
