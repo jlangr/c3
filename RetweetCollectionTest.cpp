@@ -16,7 +16,7 @@ TEST_F(ARetweetCollection, IsEmptyWhenCreated) {
 TEST_F(ARetweetCollection, IsNoLongerEmptyAfterTweetAdded) {
    collection.add(Tweet());
    
-   ASSERT_THAT(collection.isEmpty(), Eq(false));
+   ASSERT_FALSE(collection.isEmpty());
 }
 
 TEST_F(ARetweetCollection, HasSizeZeroWhenCreated) {
@@ -44,6 +44,6 @@ TEST_F(ARetweetCollection, IsEmptyAfterRemovingTweet) {
    
    collection.remove(Tweet());
 
-   ASSERT_THAT(collection.isEmpty(), Eq(true)); 
+   ASSERT_TRUE(collection.isEmpty()); 
 }
 // END:twoTests
