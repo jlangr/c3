@@ -42,6 +42,6 @@ SumCase sums[] = {
    SumCase(2, 2, 4) 
 };
 
-INSTANTIATE_TEST_CASE_P(Parameterized, AnAdder, ValuesIn(sums));
+INSTANTIATE_TEST_CASE_P(BulkTest, AnAdder, ValuesIn(sums));
 // END:ParameterizedAdderTest
 
