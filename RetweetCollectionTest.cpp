@@ -42,12 +42,12 @@ public:
    RetweetCollection collection;
    Tweet* tweet;
 
-   void SetUp() {
+   void SetUp() override {
       tweet = new Tweet("msg", "@user");
       collection.add(*tweet);
    }
 
-   void TearDown() {
+   void TearDown() override {
       delete tweet;
       tweet = nullptr;
    }
