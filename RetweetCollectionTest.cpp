@@ -47,7 +47,7 @@ public:
    shared_ptr<Tweet> tweet;
 // END_HIGHLIGHT
 
-   void SetUp() {
+   void SetUp() override {
 // START_HIGHLIGHT
       tweet = shared_ptr<Tweet>(new Tweet("msg", "@user"));
 // END_HIGHLIGHT
