@@ -41,7 +41,7 @@ class ARetweetCollectionWithOneTweet: public Test {
 public:
    RetweetCollection collection;
 
-   void SetUp() {
+   void SetUp() override {
 // START_HIGHLIGHT
       collection.add(Tweet("msg", "@user"));
 // END_HIGHLIGHT
